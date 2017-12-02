@@ -6,9 +6,9 @@ RUN apk --no-cache add openssl wget bash
 RUN wget -O gogs.zip https://dl.gogs.io/0.11.34/raspi2_armv6.zip; \
     mkdir gogs; \
     unzip gogs.zip -d gogs/; \
-    rm gogs.zip; \
-    chmod u+x /gogs/gogs
- 
-RUN ./gogs/gogs web
+    rm gogs.zip; 
+    
+WORKDIR gogs
+RUN ./gogs web
 
 EXPOSE 22 3000
