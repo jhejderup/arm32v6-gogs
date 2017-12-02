@@ -9,6 +9,7 @@ RUN wget -O gogs.zip https://dl.gogs.io/0.11.34/raspi2_armv6.zip; \
     rm gogs.zip; 
     
 WORKDIR gogs
-RUN ./gogs web
+RUN chmod u+s gogs;\ 
+    ./gogs web
 
 EXPOSE 22 3000
